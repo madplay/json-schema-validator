@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "contents": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "$ref": "#/definitions/photo"
+        },
+        {
+          "type": "object",
+          "$ref": "#/definitions/photo"
+        },
+        {
+          "type": "object",
+          "$ref": "#/definitions/text"
+        }
+      ]
+    }
+  },
+  "required": [
+    "contents"
+  ],
+  "definitions": {
+    "text": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "text"
+          ]
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "photo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "photo",
+            "video"
+          ]
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    }
+  }
+}
